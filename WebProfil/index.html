@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Profile</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h1>My Profile</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./musik.html">Music</a></li>
+            <li><a href="./portofolio.html">Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="slider">
+            <img class="slides active" src="https://picsum.photos/700/500" alt="Slide 1">
+            <img class="slides" src="https://picsum.photos/700/500?grayscale" alt="Slide 2">
+            <img class="slides" src="https://picsum.photos/700/500?blue" alt="Slide 3">
+            <button class="slider-button prev" onclick="changeSlide(-1)">Previous</button>
+            <button class="slider-button next" onclick="changeSlide(-1)">Next</button>
+        </div>
+
+        <div class="info-box">
+            <h2>About Me</h2>
+            <br>
+            <p>Halo! Saya Affani Yusuf. Selamat datang di Web Profile saya. 
+            </br>
+            </br> Saya sedang belajar membuat web profile sederhana menggunakan HTML, CSS, dan JavaScript. <br>
+            Saya sedang belajar pemrograman dan saya senang mendengarkan musik. </br> </br> My favorite song bisa anda akses disini <a href="./musik.html">Music</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Affani | Follow me on: 
+            <a href="https://github.com/affani14" target="_blank" style="color: white;">GitHub</a>, 
+        </p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+
+        function changeSlide(direction) {
+            const slides = document.querySelectorAll('.slides');
+            slides[currentSlide].classList.remove('active');
+
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+
+            slides[currentSlide].classList.add('active');
+        }
+    </script>
+</body>
+</html>

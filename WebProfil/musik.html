@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Songs</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+       
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Favorite Songs</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./musik.html">Music</a></li>
+            <li><a href="./portofolio.html">Portfolio</a></li>
+        </ul>
+    </nav>
+
+    <div class="container3">
+        <div class="track-item">
+            <h2>Song 1: "Maps" by Maroon 5</h2>
+            <audio id="song1" src="./song1.mp3"></audio>
+            <div class="controls">
+                <button class="music-control play-button" onclick="playSong('song1')">Play</button>
+                <button class="music-control stop-button" onclick="stopSong('song1')">Stop</button>
+            </div>
+        </div>
+        <div class="track-item">
+            <h2>Song 2: "Save Your Tears" by The Weeknd</h2>
+            <audio id="song2" src="./song2.mp3"></audio>
+            <div class="controls">
+                <button class="music-control play-button" onclick="playSong('song2')">Play</button>
+                <button class="music-control stop-button" onclick="stopSong('song2')">Stop</button>
+            </div>
+        </div>
+        <div class="track-item">
+            <h2>Song 3: "Bad Habits" Cover by SeoRyoung 박서령</h2>
+            <audio id="song3" src="./song3.mp3"></audio>
+            <div class="controls">
+                <button class="music-control play-button" onclick="playSong('song3')">Play</button>
+                <button class="music-control stop-button" onclick="stopSong('song3')">Stop</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Affani | Follow me on: 
+            <a href="https://github.com/affani14" target="_blank" style="color: white;">GitHub</a>
+        </p>
+    </footer>
+
+    <script>
+        function playSong(songId) {
+            
+            const songs = document.querySelectorAll('audio');
+            songs.forEach(song => {
+                if (song.id !== songId) {
+                    song.pause();
+                    song.currentTime = 0; 
+                }
+            });
+            
+            const selectedSong = document.getElementById(songId);
+            selectedSong.play();
+        }
+
+        function stopSong(songId) {
+            const selectedSong = document.getElementById(songId);
+            selectedSong.pause();
+            selectedSong.currentTime = 0; 
+        }
+    </script>
+</body>
+</html>
